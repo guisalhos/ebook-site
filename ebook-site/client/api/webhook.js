@@ -17,7 +17,20 @@ async function readRawBody(req) {
 }
 
 async function sendEbookEmail(customerEmail) {
-  const pdfPath = path.join(process.cwd(), "private", "The_Resell_Path.pdf");
+  const possiblePaths = [
+    path.join(process.cwd(), "private", "The_Resell_Path.pdf"),
+    path.join(process.cwd(), "client", "private", "The_Resell_Path.pdf"),
+    path.join("/var/task", "private", "The_Resell_Path.pdf"),
+    path.join("/var/task", "client", "private", "The_Resell_Path.pdf"),
+  ];
+
+  const pdfPath = possiblePaths.find((filePath) => fs.existsSync(filePath));
+
+  if (!pdfPath) {
+    console.error("PDF not found. Checked paths:", possiblePaths);
+    throw new Error("PDF file not found");
+  }
+
   const pdfBuffer = fs.readFileSync(pdfPath);
 
   await resend.emails.send({
