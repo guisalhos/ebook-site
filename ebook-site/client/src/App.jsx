@@ -75,7 +75,6 @@ function App() {
           <div className="book-mockup">
             <img src={cover} alt="The Resell Path ebook cover" />
           </div>
-          <p className="mockup-note">A complete step-by-step resell system.</p>
         </div>
       </div>
     </section>
