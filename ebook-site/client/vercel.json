@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "/index.html"
+    }
+  ],
   "functions": {
     "api/webhook.js": {
       "includeFiles": "private/The_Resell_Path.pdf"
