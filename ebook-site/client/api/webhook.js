@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import { Resend } from "resend";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -17,17 +18,13 @@ async function readRawBody(req) {
 }
 
 async function sendEbookEmail(customerEmail) {
-  const possiblePaths = [
-    path.join(process.cwd(), "private", "The_Resell_Path.pdf"),
-    path.join(process.cwd(), "client", "private", "The_Resell_Path.pdf"),
-    path.join("/var/task", "private", "The_Resell_Path.pdf"),
-    path.join("/var/task", "client", "private", "The_Resell_Path.pdf"),
-  ];
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
 
-  const pdfPath = possiblePaths.find((filePath) => fs.existsSync(filePath));
+  const pdfPath = path.join(__dirname, "The_Resell_Path.pdf");
 
-  if (!pdfPath) {
-    console.error("PDF not found. Checked paths:", possiblePaths);
+  if (!fs.existsSync(pdfPath)) {
+    console.error("PDF not found at:", pdfPath);
     throw new Error("PDF file not found");
   }
 

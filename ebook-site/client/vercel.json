@@ -7,7 +7,7 @@
   ],
   "functions": {
     "api/webhook.js": {
-      "includeFiles": "private/The_Resell_Path.pdf"
+      "includeFiles": "api/The_Resell_Path.pdf"
     }
   }
 }
