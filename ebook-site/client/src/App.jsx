@@ -10,7 +10,11 @@ function SectionLabel({ number, children, dark = false }) {
 function PriceBlock({ compact = false }) {
   const buy = async () => {
     try {
-      const res = await fetch(`${API_URL}/api/create-checkout-session`, { method: 'POST' })
+      const apiUrl = import.meta.env.VITE_API_URL || "";
+
+      const res = await fetch(`${apiUrl}/api/create-checkout-session`, {
+        method: "POST",
+      });
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Erro ao criar checkout')
       window.location.href = data.url
