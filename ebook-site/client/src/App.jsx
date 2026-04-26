@@ -35,28 +35,27 @@ function PriceBlock({ compact = false }) {
   </div>
 }
 
-const isSuccessPage = window.location.pathname === "/success";
-
-if (isSuccessPage) {
-  return (
-    <main className="success-page">
-      <div className="success-card">
-        <div className="success-icon">✓</div>
-        <p className="eyebrow">PURCHASE COMPLETE</p>
-        <h1>Thank you for your purchase.</h1>
-        <p>
-          Your ebook has been sent to the email address used at checkout.
-          Please check your inbox, spam or promotions folder.
-        </p>
-        <a href="/" className="primary-btn">
-          Back to website →
-        </a>
-      </div>
-    </main>
-  );
-}
-
 function App() {
+  const isSuccessPage = window.location.pathname === "/success";
+
+  if (isSuccessPage) {
+    return (
+      <main className="success-page">
+        <div className="success-card">
+          <div className="success-icon">✓</div>
+          <p className="eyebrow">PURCHASE COMPLETE</p>
+          <h1>Thank you for your purchase.</h1>
+          <p>
+            Your ebook has been sent to the email address used at checkout.
+            Please check your inbox, spam or promotions folder.
+          </p>
+          <a href="/" className="primary-btn">
+            Back to website →
+          </a>
+        </div>
+      </main>
+    );
+  }
   return <main>
     <nav className="nav">
       <a href="#top" className="brand">The Resell Path</a>
