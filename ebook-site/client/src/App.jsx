@@ -70,8 +70,12 @@ function App() {
         <PriceBlock />
       </div>
       <div className="mockup-wrap">
-        <div className="book-mockup">
-          <img src={cover} alt="The Resell Path ebook cover" />
+        <div className="mockup-card">
+          <div className="mockup-badge">91 PAGE EBOOK</div>
+          <div className="book-mockup">
+            <img src={cover} alt="The Resell Path ebook cover" />
+          </div>
+          <p className="mockup-note">A complete step-by-step resell system.</p>
         </div>
       </div>
     </section>
@@ -197,10 +201,10 @@ function App() {
       <SectionLabel number="07">FAQ</SectionLabel>
       <h2>Questions before buying.</h2>
       {[
-        ['How do I receive the ebook?', 'After payment, Stripe confirms the purchase and the PDF is sent automatically to the checkout email.'],
-        ['Is this instant?', 'Yes. The email is sent as soon as the payment is confirmed by the Stripe webhook.'],
-        ['Can I edit the site?', 'Yes. All text, colors, price and sections are inside React and CSS files.'],
-        ['Is the PDF public?', 'No. In this setup the PDF stays inside the backend private folder and is only attached after payment.']
+        ['How do I receive the ebook?', 'After payment, the PDF is sent automatically to the email address used at checkout.'],
+        ['Is the delivery instant?', 'Yes. Once the payment is confirmed, the ebook is delivered automatically by email.'],
+        ['Is this suitable for complete beginners?', 'Yes. The ebook starts from the basics and walks you through the process step by step, from your first item to building a consistent resell system.'],
+        ['What if I do not receive the email?', 'Check your spam or promotions folder first. If it still does not arrive, contact us and we will resend it manually.']
       ].map(([q, a]) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}
     </section>
 
