@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap');
+
+:root {
+  --bg: #f8f8f6;
+  --paper: #ffffff;
+  --ink: #050505;
+  --muted: #5d5d5d;
+  --line: #deded9;
+  --dark: #060606;
+  --accent: #6b6b6b;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+button, a { font: inherit; }
+
+.nav {
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4.5vw;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 21px;
+  font-weight: 900;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-link { color: #1e1e1e; text-decoration: none; font-size: 14px; }
+
+.section {
+  padding: 96px 4.5vw;
+  border-bottom: 1px solid var(--line);
+}
+.section-small {
+  padding: 84px 4.5vw;
+  border-bottom: 1px solid var(--line);
+}
+.section-label {
+  font-size: 12px;
+  letter-spacing: 8px;
+  color: #1b1b1b;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-label span {
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  display: inline-block;
+}
+.label-dark { color: #dedede; }
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.035em;
+}
+h1 { font-size: clamp(44px, 8vw, 86px); }
+h2 { font-size: clamp(34px, 5vw, 58px); max-width: 860px; }
+h3 { font-size: 24px; line-height: 1.05; }
+p { line-height: 1.7; color: var(--muted); }
+
+.hero {
+  min-height: calc(100vh - 68px);
+  display: grid;
+  grid-template-columns: 1.18fr .82fr;
+  gap: 64px;
+  align-items: center;
+  text-align: center;
+  background: var(--paper);
+}
+.hero-copy { max-width: 900px; margin: 0 auto; }
+.eyebrow {
+  letter-spacing: 10px;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 28px;
+}
+.hero h1 span, .final-cta h2 span { color: var(--accent); }
+.hero-sub {
+  max-width: 760px;
+  margin: 34px auto 34px;
+  font-size: 18px;
+}
+.mockup-wrap { display: flex; justify-content: center; }
+.book-mockup {
+  width: min(340px, 75vw);
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ddd;
+  box-shadow: 18px 18px 0 #0c0c0c, 0 25px 80px rgba(0,0,0,.15);
+  transform: rotate(1deg);
+}
+.book-mockup img { width: 100%; display: block; }
+
+.price-block { display: grid; place-items: center; gap: 22px; }
+.price-row { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.old-price { color: #666; font-size: 19px; text-decoration: line-through; }
+.price { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(54px, 8vw, 72px); font-weight: 900; line-height: .9; }
+.discount { border: 1px solid var(--ink); padding: 7px 13px; letter-spacing: 4px; font-size: 12px; }
+.primary-btn {
+  min-width: 230px;
+  height: 56px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+.primary-btn:hover { transform: translateY(-2px); background: #222; }
+.microcopy { margin: 0; font-size: 12px; color: #666; }
+
+.problem, .solution, .learn, .for-who, .testimonials, .faq { background: var(--bg); }
+.problem-list { border: 1px solid var(--line); margin-top: 58px; background: var(--paper); }
+.problem-item {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 7%;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
+.problem-item:last-child { border-bottom: 0; }
+.problem-item svg { color: #555; flex: 0 0 auto; }
+.solution p { max-width: 700px; font-size: 18px; margin-top: 30px; }
+
+.dark-section { background: var(--dark); color: #fff; border: 0; }
+.dark-section h2 { color: #fff; max-width: 740px; }
+.dark-list { margin-top: 56px; display: grid; gap: 30px; }
+.dark-item { display: grid; grid-template-columns: 38px 22px 1fr; gap: 18px; align-items: center; font-size: 18px; }
+.dark-item .num { color: #777; font-size: 22px; font-family: Georgia, serif; }
+.dark-item svg { color: white; }
+
+.quote { background: var(--paper); text-align: center; }
+.quote p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.35;
+  color: #2d2d2d;
+  margin: 0 auto;
+  max-width: 860px;
+}
+
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.cards { margin-top: 44px; }
+.card, .testimonial, .split > div {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 32px;
+}
+.card svg { margin-bottom: 22px; }
+.card p, .testimonial p { margin-bottom: 0; }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 42px; }
+ul { padding-left: 18px; color: var(--muted); line-height: 1.9; }
+.testimonials-grid { margin-top: 38px; }
+.stars { display: flex; gap: 4px; margin-bottom: 18px; }
+.testimonial strong { display: block; margin-top: 18px; }
+
+.final-cta { text-align: center; background: var(--paper); }
+.final-cta h2 { margin: 0 auto 26px; }
+.final-cta > p { margin-bottom: 34px; }
+.price-compact .price { font-size: clamp(52px, 7vw, 68px); }
+.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; margin-top: 20px; color: #555; font-size: 14px; }
+.trust-row svg { vertical-align: middle; }
+
+.faq details {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 22px 26px;
+  margin-top: 12px;
+}
+.faq summary { cursor: pointer; font-weight: 800; }
+.faq details p { margin-bottom: 0; }
+.footer { text-align: center; padding: 46px 4.5vw; background: var(--paper); }
+.footer strong { font-family: 'Playfair Display', Georgia, serif; }
+.footer p { margin: 12px 0 0; font-size: 14px; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 42px; padding-top: 72px; }
+  .mockup-wrap { order: -1; }
+  .grid, .split { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .nav { padding: 0 24px; height: 66px; }
+  .brand { font-size: 19px; }
+  .section { padding: 76px 24px; }
+  .section-small { padding: 70px 24px; }
+  .section-label { letter-spacing: 6px; font-size: 11px; }
+  .hero { text-align: center; }
+  .hero-sub { font-size: 16px; }
+  .price-row { gap: 10px; }
+  .discount { letter-spacing: 3px; padding: 6px 10px; }
+  .primary-btn { width: 100%; max-width: 320px; }
+  .problem-item { padding: 22px 24px; align-items: flex-start; }
+  .dark-item { grid-template-columns: 34px 20px 1fr; font-size: 15px; gap: 12px; }
+  .card, .testimonial, .split > div { padding: 26px; }
+}

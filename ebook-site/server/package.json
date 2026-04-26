@@ -1,0 +1,20 @@
+{
+  "name": "resell-path-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "resend": "latest",
+    "stripe": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
