@@ -157,11 +157,32 @@ function App() {
       <SectionLabel number="06">SOCIAL PROOF</SectionLabel>
       <h2>Built for serious beginners.</h2>
       <div className="grid testimonials-grid">
-        {[1, 2, 3].map((n) => <article className="testimonial" key={n}>
-          <div className="stars"><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /></div>
-          <p>“Clear, direct and practical. This helped me understand what to focus on before buying more stock.”</p>
-          <strong>Early reader #{n}</strong>
-        </article>)}
+        {[
+      {
+        name: 'Marcus Reed',
+        text: '“The biggest value was the structure. It made me stop guessing and start thinking in terms of margins, sell-through rate and reinvestment.”'
+      },
+      {
+        name: 'Emily Carter',
+        text: '“I liked that it does not sell a fantasy. It explains the boring but important parts of reselling: photos, listings, pricing and staying consistent.”'
+      },
+      {
+        name: 'Daniel Brooks',
+        text: '“The chapter about bundles helped me avoid buying random stock just because it looked cheap. Now I calculate the risk before spending money.”'
+      }
+    ].map((review) => (
+      <article className="testimonial" key={review.name}>
+        <div className="stars">
+          <Star size={16} fill="currentColor" />
+          <Star size={16} fill="currentColor" />
+          <Star size={16} fill="currentColor" />
+          <Star size={16} fill="currentColor" />
+          <Star size={16} fill="currentColor" />
+        </div>
+        <p>{review.text}</p>
+        <strong>{review.name}</strong>
+      </article>
+    ))}
       </div>
     </section>
 
